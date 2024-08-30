@@ -1,12 +1,19 @@
 import { Footer } from "./Footer"
-import { Header } from "./Header/Header"
+import { Header } from "./Header"
+import { Card } from "./Card"
+import { Flex, Box } from '@chakra-ui/react'
 
-export const Layout = ({ children }: any) => {
+
+export const Layout = () => {
   return(
     <>
-      <Header />
-      { children }
-      <Footer />
+      <Flex direction="column" minH="100vh">
+        <Box flex="1" bg="#9851EE">
+          <Header />
+          <Card />
+        </Box>
+          <Footer />
+      </Flex>
     </>
   )
 }

@@ -1,15 +1,16 @@
-interface ICard {
-  id: number,
-  paragraph: string,
-  details: string
-}
+import { Flex, Text, Input, FormControl } from '@chakra-ui/react'
+import { ComponentButton } from "./Button"
+import { login } from '../services/login'
 
-export const Card = ({ id, paragraph, details }: ICard) => {
+export const Card = () => {
   return(
-    <div>
-      <h1>Card {id}</h1>
-      <p>{paragraph}</p>
-      <p>{details}</p>
-    </div>
+    <Flex as="main" w="100%" align="center" justify="center">
+      <FormControl  w="600px" p={16} bg="white" rounded="md" textAlign="center" mt={5}>
+          <Text textAlign="center" fontSize="28px" color="gray.700" mb={2}>Faça o login</Text>
+          <Input type="email" placeholder="email" mb={2} size="lg" ></Input>
+          <Input type="password" placeholder="senha" mb={2} size="lg" ></Input>
+          <ComponentButton Click={login} ></ComponentButton>
+      </FormControl>
+    </Flex>
   )
 }
